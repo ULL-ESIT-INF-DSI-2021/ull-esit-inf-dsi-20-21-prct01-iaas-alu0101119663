@@ -49,6 +49,9 @@ Enter password for aluXXXXXXXXX@vpn.ull.es:
 Para saber los datos utilizados tanto en contraseñas como en ID he utilizado la información que nos proporciona la ULL.
 [Configuración de VPN de la ULL](https://www.ull.es/servicios/stic/2020/12/01/servicio-de-vpn-de-la-ull/)
 
+#### 3.1.2 Acceso al servicio IaaS de la ULL
+Una vez nos hemos conectados a la **VPN** accedemos a la dirección web del [Iaas](https://iaas.ull.es). Allí entramos con nuestras credenciales de nuestra cuenta institucional. Elegimos la máquina virtual de **DSI** y la iniciamos, una vez iniciada vemos que se le asigna un nombre, en mi caso es **DIS-55**. En el apartado de **Interfaces de red** podremos ver la **IP** de nuestra máquina para así conectarnos por **SSH**.
+
 
 
 
