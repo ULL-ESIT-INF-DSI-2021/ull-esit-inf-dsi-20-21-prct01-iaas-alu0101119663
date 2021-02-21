@@ -192,6 +192,154 @@ Generating public/private rsa key pair.
 usuario@iaas-dsi55:~$ cat .ssh/id_rsa.pub 
 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDevinjzkXTYSg5ai4F4FMqfSfQH1dlmVYyI5oR9PQAfJgM4yDdAfui6BtKWXEA+lmajFaQlBC178EDKsuVMhfHjYNByXypHQNDyAfoaV0Utl8C5Y3woGZ4Uu7noPu1tEdk7UaTY5uDrwtkFp19rF+FJ+fmyJLy+cYXXaTMqTfV3OdWUrBrDiEe144+EWseG72i1QbCUmcHThd7gmvcPN3cw3Iv8h/td+H7TE52jZxZrfBTflWdRz68fQ8qRJ5bJyffx4MfMCtgABTFjhiUE1lVyXylxn7lmR+lpkqj8W2TDhTi18h7UlVmyS1i1IeN11UoC/sZWsdMhK44vkXXyNZn usuario@iaas-dsi55
 ```
+### 3.2 Instalación de git y Node.js en la máquina virtual del IaaS
+
+#### 3.2.1 Instalación y configuración de git
+
+Para instalar **Git** en nuestra **máquina virtual** utilizaremos el siguiente comando: 
+
+```bash
+usuario@iaas-dsi55:~$ sudo apt install git
+```
+
+Una vez se ha terminado de instalar seguimos con unas configuraciones iniciales, como se puede ver, son los siguientes: 
+
+```bash
+usuario@iaas-dsi55:~$ git config --global user.name "Jacobo Labrador"
+usuario@iaas-dsi55:~$ git config --global user.email alu0101119663@ull.edu.es
+usuario@iaas-dsi55:~$ git config --list
+user.name=Jacobo Labrador
+user.email=alu0101119663@ull.edu.es
+```
+
+#### 3.2.2 Configuración del prompt de la terminal de la máquina virtual
+En este apartado haremos la configuración de un prompt de la terminal de la máquina virtual, esto no ayudará para saber en que rama actual nos encontramos cuando estemos en un determinado directorio que esté asociado a un **repositorio git**. Para ello debemos descargar el [script del prompt](https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh).
+Otra opción es crear un fichero con dicho nombre (git-prompt.sh) mediante el comando ```touch```y mediante ```vi```abrirlo y copiar el contenido dentro.
+Finalmente realizaremos la siguiente secuencias de comandos para modificar el fichero ```.bashrc``` y por último reiniciamos la terminal.
+
+```bash
+usuario@iaas-dsi55:~$ mv git-prompt.sh .git-prompt.sh
+usuario@iaas-dsi55:~$ vi .bashrc
+usuario@iaas-dsi55:~$ tail .bashrc
+...
+source ~/.git-prompt.sh
+PS1='\[\033]0;\u@\h:\w\007\]\[\033[0;34m\][\[\033[0;31m\]\w\[\033[0;32m\]($(git branch 2>/dev/null | sed -n "s/\* \(.*\)/\1/p"))\[\033[0;34m\]]$'
+
+usuario@iaas-dsi55:~$ exec bash -l
+[~()]$
+```
+#### 3.2.3 Conexión de la máquina virtual con Github.
+
+Como se puede apreciar en la última línea del ejemplo anterior, el prompt ha cambiado. Pero aún debemos comprobar que funcione de forma correcta. Vamos a añadir la clave pública de nuestra máquina virtual en la configuración de las claves de nuestra cuenta de Github. Esto agilizará el trabajar con repositorios remotos, y en este caso podremos clonar un repositorio para hacer la prueba de que el **prompt** funcione correctamente.
+
+```bash
+[~()]$cat ~/.ssh/id_rsa.pub
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDevinjzkXTYSg5ai4F4FMqfSfQH1dlmVYyI5oR9PQAfJgM4yDdAfui6BtKWXEA+lmajFaQlBC178EDKsuVMhfHjYNByXypHQNDyAfoaV0Utl8C5Y3woGZ4Uu7noPu1tEdk7UaTY5uDrwtkFp19rF+FJ+fmyJLy+cYXXaTMqTfV3OdWUrBrDiEe144+EWseG72i1QbCUmcHThd7gmvcPN3cw3Iv8h/td+H7TE52jZxZrfBTflWdRz68fQ8qRJ5bJyffx4MfMCtgABTFjhiUE1lVyXylxn7lmR+lpkqj8W2TDhTi18h7UlVmyS1i1IeN11UoC/sZWsdMhK44vkXXyNZn usuario@iaas-dsi55
+```
+Una vez tengamos la clave pública copiada realizaremos lo que comenté en el apartado anterior. Vamos a nuestra cuenta de Github -> *Account Settings*. En la sección de *SSH and GPG keys*, pulsamos el botón de *New SSH key*, añadimos un título y pegamos la **clave pública** de nuestra máquina virtual en el campo que se nos indica. Pulsamos sobre *Add SSH key* para confirmar y si hemos hecho todo bien ya podríamos realizar clonaciones de repositorios.
+
+```bash
+[~()]$git clone git@github.com:ULL-ESIT-INF-DSI-2021/prct01-iaas-vscode.git
+Clonando en 'prct01-iaas-vscode'...
+remote: Enumerating objects: 156, done.
+remote: Counting objects: 100% (156/156), done.
+remote: Compressing objects: 100% (117/117), done.
+remote: Total 156 (delta 67), reused 85 (delta 34), pack-reused 0
+Recibiendo objetos: 100% (156/156), 351.19 KiB | 1.02 MiB/s, listo.
+Resolviendo deltas: 100% (67/67), listo.
+```
+
+```bash
+[~()]$ls
+prct01-iaas-vscode
+[~()]$cd prct01-iaas-vscode/
+[~/prct01-iaas-vscode(main)]$
+```
+Como se puede apreciar, hemos hecho todos los pasos correctamente ya que en el **prompt** se puede ver que estamos en la rama *main*.
+
+#### 3.2.4 Instalación de Node
+En este apartado instalaremos Node Version Manager (nvm), que es un gestor de versiones de **Node.js**. El cual es un entorno que permite la ejecución de código desarrollado en **JavaScript** y otros, como por ejemplo, **TypeScript**.
+Para instalarlo haremos:
+
+```bash
+[~()]$wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
+[~()]$exec bash -l
+$exec bash -l
+```
+Ahora instalaremos la version más reciente de **Node.js**.
+
+```bash
+[~()]$nvm install node
+...
+```
+Podemos comprobar las versiones de **Node** y de **NPM**.
+
+```bash
+[~()]$node --version
+v15.9.0
+[~()]$npm --version
+7.5.3
+```
+Para instalar una **version concreta de NVM** podemos hacerlo de la siguiente forma:
+
+```bash
+[~()]$nvm install 12.0.0
+...
+```
+Volvemos a comprobar las versiones de **Node** y de **NPM**.
+
+```bash
+[~()]$node --version
+v12.0.0
+[~()]$npm --version
+6.9.0
+```
+
+Se puede comprobar que versión se está utilizando en estos momentos.
+
+```bash
+[~()]$nvm list
+->      v12.0.0
+        v15.9.0
+default -> node (-> v15.9.0)
+iojs -> N/A (default)
+unstable -> N/A (default)
+node -> stable (-> v15.9.0) (default)
+stable -> 15.9 (-> v15.9.0) (default)
+lts/* -> lts/fermium (-> N/A)
+lts/argon -> v4.9.1 (-> N/A)
+lts/boron -> v6.17.1 (-> N/A)
+lts/carbon -> v8.17.0 (-> N/A)
+lts/dubnium -> v10.23.3 (-> N/A)
+lts/erbium -> v12.20.2 (-> N/A)
+lts/fermium -> v14.15.5 (-> N/A)
+```
+
+Para finalizar se puede cambiar de versiones de la siguiente forma.
+
+```bash
+[~()]$nvm use v15.9.0
+Now using node v15.9.0 (npm v7.5.3)
+```
+
+Y si comprobamos podemos ver que el cambio se ha hecho de forma satisfactoria.
+
+```bash
+[~()]$node --version
+v15.9.0
+[~()]$npm --version
+7.5.3
+```
+
+
+
+
+
+
+
+
+
+
 
 
 
