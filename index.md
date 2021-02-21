@@ -334,6 +334,18 @@ v15.9.0
 En conclusión, me parece que la realización de esta práctica siempre viene bien para refrescar conocimientos adquieridos. En mi caso ya estaba familiarizado a utilizar VPN y el entorno del Iaas debido a que se ha exigido en otras asignaturas. En cuanto a Git y Github, también se ha visto en otras asignaturas, pero nunca está de mas enfrentarse a una nueva configuración para asegurar conocimientos que ya tenemos. Sin embargo si he aprendido a configurar Node.js, nunca me había enfrentado a su instalación y por lo que he leído me resulta interesante. También por último reseñar que tanto el lenguaje de marcas, Markdown y las herramientas de Github Pages nunca había leído acerca de ellas ni tenía conocimiento de su existencia, por lo que me ha parecido muy interesante adquirir habilidad de con ellos para realizar buenas prácticas.
 Para concluir creo que la dificultad no ha sido muy alta y no he tenido problemas a la hora de afrontar esta tarea.
 
+## Bibliografía
+Guión Práctica 1 - https://ull-esit-inf-dsi-2021.github.io/prct01-iaas/
+Configurar Git por primera vez - https://git-scm.com/book/es/v2/Inicio---Sobre-el-Control-de-Versiones-Configurando-Git-por-primera-vez   
+Libro Pro Git de Scott Chacon y Ben Straub - https://git-scm.com/book/es/v2   
+Información Github Pages - https://docs.github.com/es/github/working-with-github-pages/about-github-pages   
+Web Jekyll - https://jekyllrb.com/   
+Información Node.js - https://nodejs.org/es/about/   
+Node Version Manager - https://github.com/nvm-sh/nvm   
+Node Package Manager - https://www.npmjs.com/  
+Introducción a Markdown - https://guides.github.com/features/mastering-markdown/
+
+
 
 
 
