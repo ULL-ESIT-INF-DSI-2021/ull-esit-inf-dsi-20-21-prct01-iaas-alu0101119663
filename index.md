@@ -330,7 +330,9 @@ v15.9.0
 [~()]$npm --version
 7.5.3
 ```
-
+## 4. Conclusiones.
+En conclusión, me parece que la realización de esta práctica siempre viene bien para refrescar conocimientos adquieridos. En mi caso ya estaba familiarizado a utilizar VPN y el entorno del Iaas debido a que se ha exigido en otras asignaturas. En cuanto a Git y Github, también se ha visto en otras asignaturas, pero nunca está de mas enfrentarse a una nueva configuración para asegurar conocimientos que ya tenemos. Sin embargo si he aprendido a configurar Node.js, nunca me había enfrentado a su instalación y por lo que he leído me resulta interesante. También por último reseñar que tanto el lenguaje de marcas, Markdown y las herramientas de Github Pages nunca había leído acerca de ellas ni tenía conocimiento de su existencia, por lo que me ha parecido muy interesante adquirir habilidad de con ellos para realizar buenas prácticas.
+Para concluir creo que la dificultad no ha sido muy alta y no he tenido problemas a la hora de afrontar esta tarea.
 
 
 
