@@ -15,3 +15,20 @@ El objetivo de esta práctica es la preparación del entorno de trabajo que util
 * Instalación de **Git**.
 * Instalación de **Node**.
 * Familiarización con **Markdown** y con **Github Pages**.
+
+## 3. Desarrollo de la práctica
+### Tareas previas a la realización de la práctica 1
+
+Antes de realizar la práctica debemos realizar algunas tareas previas, que son las siguientes
+
+* Elegir grupo de trabajo.
+* Cumplimentar la encuesta sobre expectativs y conocimientos previos.
+* Darse de alta en **Google Classroom**.
+* Tener una cuenta de **Github** asociada a nuestro **correo institucional**. Pudiendo solicitar los benificios que **Github** ofrece para estudiantes.
+* Darse de alta en **Github Classroom**.
+* Aceptar la asignación de Github Classroom.
+* Leer y familiarizarnos con **Markdown**, **Github Pages** y **Jekyll**.
+
+Una vez ya tengamos el repositorio para nuestra práctica, creamos un Github Pages, para hacerlo necesitamos ir a **Settings** en nuestro repositorio, bajamos hasta el apartado de **Github Pages**, escogemos la rama deseada en el apartado **Branch** y por último escogemos el tema que deseemos.
+
+
