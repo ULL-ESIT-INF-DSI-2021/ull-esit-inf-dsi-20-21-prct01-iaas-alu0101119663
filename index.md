@@ -31,4 +31,24 @@ Antes de realizar la práctica debemos realizar algunas tareas previas, que son 
 
 Una vez ya tengamos el repositorio para nuestra práctica, creamos un Github Pages, para hacerlo necesitamos ir a **Settings** en nuestro repositorio, bajamos hasta el apartado de **Github Pages**, escogemos la rama deseada en el apartado **Branch** y por último escogemos el tema que deseemos.
 
+### 3.1 Configuración de la máquina virtual en el Iaas
+#### 3.1.1 Conectarse a la VPN de la ULL
+
+El primer paso que demos es conectarno a la VPN que nos ofrece la ULL, con esto podremos entrar al entorno del Iaas. Para conectarme, yo que utilizo Ubuntu uso la terminal con los siguientes comandos.
+
+```bash
+jaco@Sobremesa:~$ sudo vpnc-connect
+[sudo] contraseña para jaco: 
+Enter IPSec gateway address: vpn.ull.es
+Enter IPSec ID for vpn.ull.es: ULL
+Enter IPSec secret for ULL@vpn.ull.es: 
+Enter username for vpn.ull.es: aluXXXXXXXXXX
+Enter password for aluXXXXXXXXX@vpn.ull.es: 
+```
+
+Para saber los datos utilizados tanto en contraseñas como en ID he utilizado la información que nos proporciona la ULL.
+[Configuración de VPN de la ULL](https://www.ull.es/servicios/stic/2020/12/01/servicio-de-vpn-de-la-ull/)
+
+
+
 
