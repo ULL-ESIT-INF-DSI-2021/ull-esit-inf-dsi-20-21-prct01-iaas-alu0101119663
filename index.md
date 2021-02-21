@@ -36,7 +36,7 @@ Una vez ya tengamos el repositorio para nuestra práctica, creamos un Github Pag
 
 El primer paso que demos es conectarno a la VPN que nos ofrece la ULL, con esto podremos entrar al entorno del Iaas. Para conectarme, yo que utilizo Ubuntu uso la terminal con los siguientes comandos.
 
-```bash
+``bash
 jaco@Sobremesa:~$ sudo vpnc-connect
 [sudo] contraseña para jaco: 
 Enter IPSec gateway address: vpn.ull.es
@@ -44,13 +44,17 @@ Enter IPSec ID for vpn.ull.es: ULL
 Enter IPSec secret for ULL@vpn.ull.es: 
 Enter username for vpn.ull.es: aluXXXXXXXXXX
 Enter password for aluXXXXXXXXX@vpn.ull.es: 
-```
+``
 
 Para saber los datos utilizados tanto en contraseñas como en ID he utilizado la información que nos proporciona la ULL.
 [Configuración de VPN de la ULL](https://www.ull.es/servicios/stic/2020/12/01/servicio-de-vpn-de-la-ull/)
 
 #### 3.1.2 Acceso al servicio IaaS de la ULL
 Una vez nos hemos conectados a la **VPN** accedemos a la dirección web del [Iaas](https://iaas.ull.es). Allí entramos con nuestras credenciales de nuestra cuenta institucional. Elegimos la máquina virtual de **DSI** y la iniciamos, una vez iniciada vemos que se le asigna un nombre, en mi caso es **DIS-55**. En el apartado de **Interfaces de red** podremos ver la **IP** de nuestra máquina para así conectarnos por **SSH**.
+
+#### 3.1.3 Conexión remota y primeras configuraciones
+Estando conectados ya a la **VPN** y sabiendo a la **IP** que nos debemos conectar, abrimos una terminal para conectarnos a dicha **IP** de forma remota medienta **SSH**
+``bash
 
 
 
